@@ -1,6 +1,6 @@
 var mysql = require('mysql2');
 const viewAllEmployees = require('./lib/employee');
-const viewAllDepartments = require('./lib/department');
+const {addNewDepartment, viewAllDepartments} = require('./lib/department');
 const {viewAllRoles, addNewRole} = require('./lib/role');
 
 const connection = mysql.createConnection({
