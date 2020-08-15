@@ -5,7 +5,8 @@ USE employee_db;
 CREATE TABLE department (
     id INTEGER AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    UNIQUE (name)
 );
 
 CREATE TABLE role (
@@ -13,7 +14,8 @@ CREATE TABLE role (
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
     department_id INTEGER UNSIGNED NOT NULL REFERENCES department(id),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT uq_role UNIQUE (title, department_id)
 );
 
 CREATE TABLE employee (
@@ -22,5 +24,6 @@ CREATE TABLE employee (
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER UNSIGNED NOT NULL REFERENCES role(id),
     manager_id INTEGER UNSIGNED REFERENCES manager(id),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT uq_person UNIQUE (first_name, last_name, role_id, manager_id)
 );
