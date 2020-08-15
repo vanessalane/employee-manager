@@ -1,9 +1,5 @@
 var mysql = require('mysql2');
-const {addNewEmployee, updateEmployeeRole, viewAllEmployees} = require('./lib/employee');
-const {addNewDepartment, viewAllDepartments} = require('./lib/department');
-const {addNewRole, viewAllRoles} = require('./lib/role');
-const showMenu = require('./lib/prompts');
-const inquirer = require('inquirer');
+const prompt = require('./lib/prompt');
 
 const connection = mysql.createConnection({
     host: 'localhost',

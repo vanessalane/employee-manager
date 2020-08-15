@@ -7,7 +7,7 @@ validateNumber = (input) => {
     }
 }
 
-validateRequiredResponse = (input) => {
+validateRequired = (input) => {
     const value = input.trim();
     if (!value) {
         return 'Please provide a response.'
@@ -16,4 +16,4 @@ validateRequiredResponse = (input) => {
     }
 }
 
-module.exports = {validateRequiredResponse, validateNumber};
+module.exports = {validateRequired, validateNumber};
