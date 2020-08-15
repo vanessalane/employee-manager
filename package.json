@@ -4,7 +4,7 @@
   "description": "## User Story AS A business owner I WANT to be able to view and manage the departments, roles, and employees in my company SO THAT I can organize and plan my business",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js"
   },
   "repository": {
@@ -21,6 +21,7 @@
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^7.3.3",
+    "jest": "^26.4.0",
     "mysql2": "^2.1.0"
   }
 }
