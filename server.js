@@ -1,5 +1,6 @@
 var mysql = require('mysql2');
-const prompt = require('./lib/prompt');
+const { viewAllEmployees } = require('./lib/employee');
+const cTable = require('console.table');
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -10,6 +11,7 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
     if (err) throw err;
-    console.log('Welcome to the Employee Manager!');
-    showMenu(connection);
+    console.log(`'Welcome to the Employee Manager!
+    `)
+    viewAllEmployees(connection)
 });

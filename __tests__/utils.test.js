@@ -82,19 +82,3 @@ test('getIdFromChoice should return the correct id number if choices were not re
 
     expect(getIdFromChoice(results, choices, 'test2')).toBe(2);
 })
-
-test('getIdFromChoice should return the correct id number if the choice has been formatted', () => {
-    const results = [{
-        id: 1,
-        name: 'test'
-    },{
-        id: 2,
-        name: 'test2'
-    },{
-        id: 3,
-        name: 'test3'
-    }]
-    const choices = ['Test', 'Test 2', 'Test 3'];
-
-    expect(getIdFromChoice(results, choices, 'Test 3')).toBe(3);
-})
