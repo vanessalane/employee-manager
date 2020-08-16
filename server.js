@@ -1,5 +1,5 @@
 var mysql = require('mysql2');
-const mainPrompt = require('./lib/employee/index');
+const employee = require('./lib/employee');
 
 const connection = mysql.createConnection({
     host: 'localhost',
