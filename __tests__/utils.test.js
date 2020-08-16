@@ -65,20 +65,3 @@ test('toTitleCase returns false if no input is provided', () => {
     const result = toTitleCase();
     expect(result).toBe(false);
 })
-
-// getIdFromChoice
-test('getIdFromChoice should return the correct id number if choices were not reformatted', () => {
-    const results = [{
-        id: 1,
-        name: 'test'
-    },{
-        id: 2,
-        name: 'test2'
-    },{
-        id: 3,
-        name: 'test3'
-    }]
-    const choices = ['test', 'test2', 'test3'];
-
-    expect(getIdFromChoice(results, choices, 'test2')).toBe(2);
-})
