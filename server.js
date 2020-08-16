@@ -1,3 +1,4 @@
+var figlet = require('figlet');
 var mysql = require('mysql2');
 const employee = require('./lib/employee');
 
@@ -10,7 +11,16 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
     if (err) throw err;
-    console.log(`'Welcome to the Employee Manager!
-    `)
-    viewAllEmployees(connection)
+    figlet('Employee Manager', {
+            width: 80,
+            whitespaceBreak: true
+    },function(err, data) {
+        if (err) {
+            console.log('Something went wrong...');
+            console.dir(err);
+            return;
+        }
+        console.log(data);
+        viewAllEmployees(connection)
+    });
 });
