@@ -3,27 +3,31 @@ CREATE DATABASE employee_db;
 USE employee_db;
 
 CREATE TABLE department (
-    id INTEGER AUTO_INCREMENT,
+    id INTEGER UNSIGNED AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
     PRIMARY KEY (id),
     UNIQUE (name)
 );
 
 CREATE TABLE role (
-    id INTEGER AUTO_INCREMENT,
+    id INTEGER UNSIGNED AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
-    department_id INTEGER UNSIGNED NOT NULL REFERENCES department(id),
+    department_id INTEGER UNSIGNED NOT NULL,
     PRIMARY KEY (id),
+    FOREIGN KEY (department_id) REFERENCES department(id)
+        ON DELETE CASCADE,
     CONSTRAINT uq_role UNIQUE (title, department_id)
 );
 
 CREATE TABLE employee (
-    id INTEGER AUTO_INCREMENT,
+    id INTEGER UNSIGNED AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    role_id INTEGER UNSIGNED NOT NULL REFERENCES role(id),
-    manager_id INTEGER UNSIGNED REFERENCES manager(id),
+    role_id INTEGER UNSIGNED NOT NULL,
+    manager_id INTEGER UNSIGNED,
     PRIMARY KEY (id),
+    FOREIGN KEY (role_id) REFERENCES role(id)
+        ON DELETE CASCADE,
     CONSTRAINT uq_person UNIQUE (first_name, last_name, role_id, manager_id)
 );
