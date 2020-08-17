@@ -1,6 +1,6 @@
 var figlet = require('figlet');
 var mysql = require('mysql2');
-const employee = require('./lib/employee');
+const employee = require('./lib/employee/employeeOptions');
 
 const connection = mysql.createConnection({
     host: 'localhost',
