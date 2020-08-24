@@ -1,7 +1,7 @@
 # Employee Tracker
 
 ## Description
-A Node/Express app that allows users to manage their employees.
+A Node/Express CLI app that allows users to manage their employees.
 
 **Possible Actions**
 - View All Departments
